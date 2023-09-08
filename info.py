@@ -11,25 +11,116 @@ def is_enabled(value, default):
         return default
 
 # Bot information
-SESSION = environ.get('SESSION', 'LazyPrincess')
-API_ID = int(environ.get('API_ID', '13323016'))
-API_HASH = environ.get('API_HASH', '68e791e616100248b0a53ae86a661a12')
-BOT_TOKEN = environ.get('BOT_TOKEN', "")
+SESSION = environ.get('SESSION', 'Media_search')
+API_ID = int(environ.get('API_ID', '23830477'))
+API_HASH = environ.get('API_HASH', '19f8365d98fb11c9cd6c1eaa8b1fa4b8')
+BOT_TOKEN = environ.get('BOT_TOKEN', "6384094059:AAFbvaJ2jb_AHfb1xTATuZvciJMnaH9EZws")
 
 #Port
-PORT = environ.get("PORT", "8080")
+PORT = environ.get("PORT", "7070")
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', False))
-PICS = (environ.get('PICS', 'https://telegra.ph/file/68d28011b2bc356b5db01.png')).split()
+PICS = [
+    "https://telegra.ph/file/451a9169cb4bca927080f.jpg",
+    "https://telegra.ph/file/9fc8c8de06567f8ae2c2b.jpg",
+    "https://telegra.ph/file/c529f35aacc3d2abc8506.jpg",
+    "https://telegra.ph/file/510f122c639b622ff58d5.jpg",
+    "https://telegra.ph/file/dd4c7a696ad93f61b8237.jpg",
+    "https://telegra.ph/file/3dd35884409726bb73b36.jpg",
+    "https://telegra.ph/file/8eb078168134871566d30.jpg",
+    "https://telegra.ph/file/8d1d4b4a1ed2de4830273.jpg",
+    "https://telegra.ph/file/1d28bcea826cc2a2c9799.jpg",
+    "https://telegra.ph/file/89bac63888fedc062ccf9.jpg",
+    "https://telegra.ph/file/e130508fd1c5a7afbce1d.jpg",
+    "https://telegra.ph/file/78c87763cb140992f5ad6.jpg",
+    "https://telegra.ph/file/dc92d039fa693acf5d979.jpg",
+    "https://telegra.ph/file/e5cf0a4c1ce9e2c309bfe.jpg",
+    "https://telegra.ph/file/50392bef6764d8b38b0bf.jpg",
+    "https://telegra.ph/file/9206d428a468856bf1e0d.jpg",
+    "https://telegra.ph/file/9d6efcb7813d9643067a7.jpg",
+    "https://telegra.ph/file/f1a3d6b5a7f7f4ca36ee2.jpg",
+    "https://telegra.ph/file/f07947ec8ee7c8560e19e.jpg",
+    "https://telegra.ph/file/6660dc2786d6d4788d187.jpg",
+    "https://telegra.ph/file/061fd49c54a12bb67e8f9.jpg",
+    "https://telegra.ph/file/c1cbb94f2494d1aa528a3.jpg",
+    "https://telegra.ph/file/0861d0d95232c6ff6adcd.jpg",
+    "https://telegra.ph/file/1f6420b86cc6a4fc877c0.jpg",
+    "https://telegra.ph/file/a78a305f1267b00f22ed4.jpg",
+    "https://telegra.ph/file/73da3b58b9ce339670474.jpg",
+    "https://telegra.ph/file/7a49738026138a2c062d9.jpg",
+    "https://telegra.ph/file/fbe0918db37e0f48f30ba.jpg",
+    "https://telegra.ph/file/6b07361706ff748816601.jpg",
+    "https://telegra.ph/file/a8ec9b2c6db0f9bd6b3a8.jpg",
+    "https://telegra.ph/file/7288b5da0fb688414deef.jpg",
+    "https://telegra.ph/file/53a816b088124d3c66bc5.jpg",
+    "https://telegra.ph/file/6ac56221904580d5d3441.jpg",
+    "https://telegra.ph/file/f83b2d99b76e0ac35887d.jpg",
+    "https://telegra.ph/file/390e16dcc796cfeb83577.jpg",
+    "https://telegra.ph/file/4afbcbaba868f54e7a978.jpg",
+    "https://telegra.ph/file/0b6fb808a8e24dae9ec1c.jpg",
+    "https://telegra.ph/file/9e2d0a0af022d5ce1f29e.jpg",
+    "https://telegra.ph/file/3411143bae8a8172af7e5.jpg",
+    "https://telegra.ph/file/82a86dfb865384f3a7605.jpg",
+    "https://telegra.ph/file/1649a05bfac2fe427c899.jpg",
+    "https://telegra.ph/file/641f50719aa46c861b03b.jpg",
+    "https://telegra.ph/file/195692b21de0a08c98e67.jpg",
+    "https://telegra.ph/file/8893b4eafc1482fa1a9cc.jpg",
+    "https://telegra.ph/file/dc3a6a9d4515bcba92738.jpg",
+    "https://telegra.ph/file/3b67fbb27ec76733300d2.jpg",
+    "https://telegra.ph/file/68b61bb9247d97e790a18.jpg",
+    "https://telegra.ph/file/671337718cd6890dc6fc0.jpg",
+    "https://telegra.ph/file/e3727d2204d61c5dde803.jpg",
+    "https://telegra.ph/file/1f181a8a26415255079d7.jpg",
+    "https://telegra.ph/file/7d74a6ffc20bb32c5965f.jpg",
+    "https://telegra.ph/file/df934bd669d3fdce27c47.jpg",
+    "https://telegra.ph/file/123c52599b60144a59a9c.jpg",
+    "https://telegra.ph/file/7812a61812f1d21e87899.jpg",
+    "https://telegra.ph/file/59a4a4e80675ef245772f.jpg",
+    "https://telegra.ph/file/8f060e468a55b19d8b7f6.jpg",
+    "https://telegra.ph/file/4b84bc8651f1712112755.jpg",
+    "https://telegra.ph/file/65e0fe1f2d1bb2a3064ce.jpg",
+    "https://telegra.ph/file/40a291550d830b600a052.jpg",
+    "https://telegra.ph/file/f62474ef87f87c5f9c098.jpg",
+    "https://telegra.ph/file/72f2a02a64218c0d04537.jpg",
+    "https://telegra.ph/file/4133a958b124a519c6020.jpg",
+    "https://telegra.ph/file/9abf5c4c8d35472536e0a.jpg",
+    "https://telegra.ph/file/a846f83e78b5d84b6215f.jpg",
+    "https://telegra.ph/file/6fd2b95a54bed69de5add.jpg",
+    "https://telegra.ph/file/437f905fe9a8988d07f41.jpg",
+    "https://telegra.ph/file/e1ebebf52ce8b2a749707.jpg",
+    "https://telegra.ph/file/b877ee2028ebe45a41493.jpg",
+    "https://telegra.ph/file/c7af99a1e5809772cafb2.jpg",
+    "https://telegra.ph/file/54c502e96ce8505ae876e.jpg",
+    "https://telegra.ph/file/d4174f0cdfb15f76f14b5.jpg",
+    "https://telegra.ph/file/9859e28b47d7d7734b8f5.jpg",
+    "https://telegra.ph/file/a396fb2e8771c5c4360a9.jpg",
+    "https://telegra.ph/file/ff63898dcb9f74cdac179.jpg",
+    "https://telegra.ph/file/84f57c7b814c33474231c.jpg",
+    "https://telegra.ph/file/08a464bed5c135c212fb8.jpg",
+    "https://telegra.ph/file/7282ef0777321f6e72a58.jpg",
+    "https://telegra.ph/file/470058f042fba90717404.jpg",
+    "https://telegra.ph/file/f1e1e9d31bc2a4d1e6798.jpg",
+    "https://telegra.ph/file/15719217d3ad505f1346b.jpg",
+    "https://telegra.ph/file/9c5aba59a85f1de92bd59.jpg",
+    "https://telegra.ph/file/dde366c5b307679b25b1f.jpg",
+    "https://telegra.ph/file/25d6e249f017b5c2a25e6.jpg",
+    "https://telegra.ph/file/f042b7d173a57ec750082.jpg",
+    "https://telegra.ph/file/7e7c20474b2f8601dce8f.jpg",
+    "https://telegra.ph/file/fbb6e28a3b311dbb7df3b.jpg",
+    "https://telegra.ph/file/79862f5ec9525f367f698.jpg",
+    "https://telegra.ph/file/ca1d306c80e0ac0d524e5.jpg",
+    "https://telegra.ph/file/04d7c9df026c3c2b75cfe.jpg",
+    "https://telegra.ph/file/5da622b0a0b356cea1a4c.jpg"
+]
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '1484670284').split()]
-CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001620891165').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '1484670284').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '6408116706').split()]
+CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001629572693').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL', '-1001765107260')
+auth_channel = environ.get('AUTH_CHANNEL', '-1001629572693')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
@@ -40,14 +131,14 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001782419622'))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'LazyPrincessSupport')
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001607412183'))
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'MHA_Discussion')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "True")), False)
 SINGLE_BUTTON = is_enabled((environ.get('SINGLE_BUTTON', "True")), False)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "⚡<b>File uploaded by [Movies Adaa™](https://t.me/real_MoviesAdda1)</b>⚡\n\nName: {file_caption} \n\n⚙️ <b>Size: </b><code>{file_size}</code>🔥  ↭ <b>Join Now [MoviesAdda™](https://t.me/real_MoviesAdda1)</b> ↭  🔥")
-BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "⚡<b>File uploaded by [Movies Adaa™](https://t.me/real_MoviesAdda1)</b>⚡\n\nName: {file_caption} \n\n⚙️ <b>Size: </b><code>{file_size}</code>🔥  ↭ <b>Join Now [MoviesAdda™](https://t.me/real_MoviesAdda1)</b> ↭  🔥")
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Your Query: {query}</b> \n‌‌‌‌IMDb: \n\n🏷 Title: {title}\n🌟 Rating : {rating}/10\n🎭 Genres: {genres}\n📆 Year: {year}\n⏰ Duration : {runtime}\n🎙️ Languages : {languages}\n🔖 Plot : {plot}\n\n♥️ we are nothing without you ♥️ \n\n💛 Please Share Us 💛\n\n⚠️Click on the button 👇 below to get your query privately")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "<code>{file_name}</code>\n\n<b>━━━━━━━━━━•••••━━━━━━━━━\n🍿 Find any movie - 🏘 Backup - @MOVIES_HUB_ALPHA_Official\n❤️ SHARE AND SUPPORT US</b>")
+BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", "<code>{file_name}</code>\n\n<b>━━━━━━━━━━•••••━━━━━━━━━\n🍿 Find any movie - 🏘 Backup - @MOVIES_HUB_ALPHA_Official\n❤️ SHARE AND SUPPORT US</b>")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Your Query: {query}</b> \n‌‌‌‌IMDb: \n\n🏷 Title: {title}\n🌟 Rating : {rating}/10\n🎭 Genres: {genres}\n📆 Year: {year}\n⏰ Duration : {runtime}\n🎙️ Languages : {languages}\n🔖 Plot : {plot}\n\n♥️ we are nothing without you ♥️ \n\n💛 Please Share Us 💛\n\n⚠️Click on the button 👇 below to get your query privately\n\n🎊 𝖯𝗈𝗐𝖾𝗋𝖾𝖽 𝖡𝗒 [『 MOVIES HUB ALPHA 』](t.me/MOVIES_HUB_ALPHA_Official)")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), False)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
@@ -71,8 +162,8 @@ LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
     
       # URL Shortener #
 
-URL_SHORTENR_WEBSITE = environ.get('URL_SHORTENR_WEBSITE', 'api.shareus.in/shortLink')
-URL_SHORTNER_WEBSITE_API = environ.get('URL_SHORTNER_WEBSITE_API', 'I3Khu0fwfbWpd1W2ofcyP2znDA12')
+URL_SHORTENR_WEBSITE = environ.get('URL_SHORTENR_WEBSITE', '')
+URL_SHORTNER_WEBSITE_API = environ.get('URL_SHORTNER_WEBSITE_API', '')
 
      # Auto Delete For Group Message (Self Delete) #
 SELF_DELETE_SECONDS = int(environ.get('SELF_DELETE_SECONDS', 100))
@@ -82,10 +173,10 @@ if SELF_DELETE == "True":
 
     # Download Tutorial Button #
 DOWNLOAD_TEXT_NAME = "📥 HOW TO DOWNLOAD 📥"
-DOWNLOAD_TEXT_URL = "https://t.me/LazyDeveloper"
+DOWNLOAD_TEXT_URL = "https://t.me/MOVIES_HUB_ALPHA_OFFICIAL"
 
    # Custom Caption Under Button #
 CAPTION_BUTTON = "Get Updates"
-CAPTION_BUTTON_URL = "https://t.me/LazyDeveloper"
+CAPTION_BUTTON_URL = "https://t.me/MOVIES_HUB_ALPHA_OFFICIAL"
 
    # Auto Delete For Bot Sending Files #
